@@ -38,18 +38,6 @@
 <div class="container">
     <h1>Ericsson MediaFirst Analysis</h1>
     <h2 class="lead">Send Files Tool</h2>
-
-    <form action="/ericsson-egress-form" method="post">
-      <div>
-          <lable for="username">Username:</lable>
-          <input type="text" id="username" />
-      </div>
-      <div>
-        <label for="mail">E-mail:</label>
-        <input type="email" id="mail" />
-      </div>
-    </form>
-
     <br>
     <br>
     <!-- The file upload form used as target for the file upload widget -->
@@ -58,7 +46,7 @@
         <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
         <input type="hidden" name="example1" value="test">
     	   <div class="row">
-              <label>Example: <input type="text" name="example2"></label>
+              <label>UserName: <input type="text" name="username"></label>
     	   </div>
 	<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
         <div class="row fileupload-buttonbar">
