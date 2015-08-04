@@ -60,7 +60,7 @@
             // The minimum allowed file size in bytes:
             minFileSize: undefined, // No minimal file size
             // The limit of files to be uploaded:
-            maxNumberOfFiles: 10,
+            // maxNumberOfFiles: 10,
 
             // Function returning the current number of files,
             // has to be overriden for maxNumberOfFiles validation:
