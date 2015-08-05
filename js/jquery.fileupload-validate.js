@@ -54,9 +54,9 @@
         options: {
             // The regular expression for allowed file types, matches
             // against either file type or file name:
-            acceptFileTypes: /(\.|\/)(gif|jpe?g|png|iso)$/i,
+            // acceptFileTypes: /(\.|\/)(gif|jpe?g|png|iso)$/i,
             // The maximum allowed file size in bytes:
-            maxFileSize: 2000000, // 2 MB
+            maxFileSize: 10000000, // 10 MB
             // The minimum allowed file size in bytes:
             minFileSize: undefined, // No minimal file size
             // The limit of files to be uploaded:
