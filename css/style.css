@@ -20,23 +20,15 @@ body {
    box-sizing: border-box;
 }
 */
-form {
+
+fieldset {
   border: 1px solid #c6c7cc;
   border-radius: 5px;
+  margin: 0;
+  padding: 0;
   font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
   width: 240px;
-}
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-input {
-  border-radius: 5px;
-  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0;
 }
 .account-info {
   padding: 20px 20px 0 20px;
@@ -56,25 +48,3 @@ input {
   margin-top: 6px;
   width: 100%;
 }
-/*
-.account-action {
-  background: #f0f0f2;
-  border-top: 1px solid #c6c7cc;
-  padding: 20px;
-}
-.account-action .btn {
-  background: linear-gradient(#49708f, #293f50);
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  float: left;
-  padding: 8px 16px;
-}
-.account-action label {
-  color: #7c7c80;
-  font-size: 12px;
-  float: left;
-  margin: 10px 0 0 20px;
-}
-*/
