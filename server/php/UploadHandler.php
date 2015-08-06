@@ -51,7 +51,7 @@ class UploadHandler
             'param_name' => 'files',
             // Set the following option to 'POST', if your server does not support
             // DELETE requests. This is a parameter sent to the client:
-            'delete_type' => 'DELETE',
+            'delete_type' => 'POST',
             'access_control_allow_origin' => '*',
             'access_control_allow_credentials' => false,
             'access_control_allow_methods' => array(
@@ -110,7 +110,7 @@ class UploadHandler
             // Set to 0 to use the GD library to scale and orient images,
             // set to 1 to use imagick (if installed, falls back to GD),
             // set to 2 to use the ImageMagick convert binary directly:
-            'image_library' => 1,
+            'image_library' => 0,
             // Uncomment the following to define an array of resource limits
             // for imagick:
             /*
@@ -148,13 +148,13 @@ class UploadHandler
                     // Make sure that this directory doesn't allow execution of files if you
                     // don't pose any restrictions on the type of uploaded files, e.g. by
                     // copying the .htaccess file from the files directory for Apache:
-                    'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/thumb/',
-                    'upload_url' => $this->get_full_url().'/thumb/',
+                    // 'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/thumb/',
+                    // 'upload_url' => $this->get_full_url().'/thumb/',
                     // Uncomment the following to force the max
                     // dimensions and e.g. create square thumbnails:
-                    'crop' => true,
-                    'max_width' => 80,
-                    'max_height' => 80
+                    // 'crop' => true,
+                    // 'max_width' => 80,
+                    // 'max_height' => 80
                 )
             ),
             'print_response' => true
