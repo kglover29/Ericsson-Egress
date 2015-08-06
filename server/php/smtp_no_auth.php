@@ -6,14 +6,14 @@
     ini_set('display_errors', '1');
 
     //$name = $_POST["name"];
-    $email = $_POST['email1'];
+    $email = $_POST["email1"];
     //$subject = $_POST["subject"];
     //$message = $_POST["message"];
 
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->SMTPDebug = 3;
-    $mail->Host = "tls.smtp.gmail.com:587"; // Your SMTP PArameter
+    $mail->Host = "smtp.gmail.com"; // Your SMTP PArameter
     $mail->Port = 587; // Your Outgoing Port
     $mail->SMTPAuth = true; // This Must Be True
     $mail->Username = "moglo.wedding@gmail.com"; // Your Email Address
