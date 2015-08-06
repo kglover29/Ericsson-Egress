@@ -1,50 +1,62 @@
 <?php
-/**
- * This example shows making an SMTP connection without using authentication.
- */
 
-//SMTP needs accurate times, and the PHP time zone MUST be set
-//This should be done in your php.ini, but this is how to do it if you don't have access to that
-date_default_timezone_set('Etc/UTC');
+    require 'PHPMailerAutoload.php';
 
-require_once '../PHPMailerAutoload.php';
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
 
-//Create a new PHPMailer instance
-$mail = new PHPMailer;
-//Tell PHPMailer to use SMTP
-$mail->isSMTP();
-//Enable SMTP debugging
-// 0 = off (for production use)
-// 1 = client messages
-// 2 = client and server messages
-$mail->SMTPDebug = 2;
-//Ask for HTML-friendly debug output
-$mail->Debugoutput = 'html';
-//Set the hostname of the mail server
-$mail->Host = "WIN-7N78K43E3RM";
-//Set the SMTP port number - likely to be 25, 465 or 587
-$mail->Port = 25;
-//Whether to use SMTP authentication
-$mail->SMTPAuth = false;
-//Set who the message is to be sent from
-$mail->setFrom('noreply@kgtest.com', 'Test Test');
-//Set an alternative reply-to address
-$mail->addReplyTo('replyto@example.com', 'First Last');
-//Set who the message is to be sent to
-$mail->addAddress('kglover29@gmail.com', 'Kevin Glover');
-//Set the subject line
-$mail->Subject = 'PHPMailer SMTP without auth test';
-//Read an HTML message body from an external file, convert referenced images to embedded,
-//convert HTML into a basic plain-text alternative body
-$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-//Replace the plain text body with one created manually
-$mail->AltBody = 'This is a plain-text message body';
-//Attach an image file
-//$mail->addAttachment('images/phpmailer_mini.png');
+    //$name = $_POST["name"];
+    $email = $_POST["email1"];
+    //$subject = $_POST["subject"];
+    //$message = $_POST["message"];
 
-//send the message, check for errors
-if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-} else {
-    echo "Message sent!";
-}
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SMTPDebug = 3;
+    $mail->Host = "localhost"; // Your SMTP PArameter
+    $mail->Port = 25; // Your Outgoing Port
+    $mail->SMTPAuth = false; // This Must Be True
+    //$mail->Username = "username"; // Your Email Address
+    //$mail->Password = "secret"; // Your Password
+    //$mail->SMTPSecure = 'tls'; // Check Your Server's Connections for TLS or SSL
+
+    $mail->From = "noreply@test.com";
+    $mail->FromName = "Kevin G";
+    $mail->AddAddress($email);
+
+    $mail->IsHTML(true);
+
+    $mail->Subject = "Analysis Shuttle Tool";
+
+    $mail->Body = $mail_body = "<html> <body>";
+    $mail_body = "<b>Hello Admin,</b><br><br>You have got email from your website.<br><br>";
+    $mail_body .= '<table style="" cellpadding="3">';
+    $mail_body .= "
+                    <tr>
+                    <td width='50'> <strong> Name </strong> </td>
+                    <td width='5'> : </td>
+                    <td>Kevin</td>
+                    </tr>
+                    <tr>
+                    <td> <strong> Email </strong> </td>
+                    <td> : </td>
+                    <td>kglover29@gmail.com</td>
+                    </tr>
+                    <tr>
+                    <td> <strong> Message </strong> </td>
+                    <td> : </td>
+                    <td>This is a test</td>
+                    </tr>
+                    </table>
+                    </body> </html>";
+
+    if(!$mail->Send())
+    {
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+    }
+    else
+    {
+        echo 'success';
+    }
+
+    ?>
