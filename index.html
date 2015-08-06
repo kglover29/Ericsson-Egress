@@ -40,22 +40,18 @@
     <h2 class="lead">Analysis Shuttle Tool</h2>
     <br>
 
-    <!-- The fileupload-email recipient is used to pass a send to to the phpmail.php
-    <form id="email" action="server/php/" method="POST" enctype="multipart/form-data">
-      <div class="user-input">
-        <label>Email Recipient<input type="email" name="email"></label>
-      </div>
-    </form>
-     <br> -->
-
-    <!-- The file upload form used as target for the file upload widget -->
-    <form id="fileupload" action="server/php/" method="POST" enctype="multipart/form-data">
-      <!-- The fileupload-email recipient is used to pass a send to to the phpmail.php -->
-      <div class="user-input">
+    <!-- The fileupload-email recipient is used to pass a send to to the phpmail.php -->
+    <div class="user-input">
+      <form id="form">
         <p id="returnmessage"></p>
         <label>Email Recipient<input type="text" id="email" placeholder="Email"></label>
         <label>Message:</label><textarea id="message" placeholder="Message......."></textarea>
-      </div>
+      </form>
+    </div>
+     <br>
+
+    <!-- The file upload form used as target for the file upload widget -->
+    <form id="fileupload" action="server/php/" method="POST" enctype="multipart/form-data">
 	  <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
         <div class="row fileupload-buttonbar">
             <div class="col-lg-7">
