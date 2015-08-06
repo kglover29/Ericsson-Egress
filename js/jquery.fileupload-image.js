@@ -129,7 +129,7 @@
             // Define if resized images should be cropped or only scaled:
             imageCrop: false,
             // Disable the resize image functionality by default:
-            disableImageResize: false,
+            disableImageResize: true,
             // The maximum width of the preview images:
             previewMaxWidth: 80,
             // The maximum height of the preview images:
