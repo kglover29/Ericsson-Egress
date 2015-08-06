@@ -13,12 +13,12 @@
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->SMTPDebug = 3;
-    $mail->Host = "localhost"; // Your SMTP PArameter
-    $mail->Port = 25; // Your Outgoing Port
-    $mail->SMTPAuth = false; // This Must Be True
-    //$mail->Username = "username"; // Your Email Address
-    //$mail->Password = "secret"; // Your Password
-    //$mail->SMTPSecure = 'tls'; // Check Your Server's Connections for TLS or SSL
+    $mail->Host = "tls.smtp.google.com"; // Your SMTP PArameter
+    $mail->Port = 587; // Your Outgoing Port
+    $mail->SMTPAuth = true; // This Must Be True
+    $mail->Username = "moglo.wedding@gmail.com"; // Your Email Address
+    $mail->Password = "DizabethJones8920"; // Your Password
+    $mail->SMTPSecure = 'tls'; // Check Your Server's Connections for TLS or SSL
 
     $mail->From = "noreply@test.com";
     $mail->FromName = "Kevin G";

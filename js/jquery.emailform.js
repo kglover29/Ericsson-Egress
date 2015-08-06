@@ -1,6 +1,12 @@
 $(document).ready(function() {
   $('#fileupload').bind('fileuploadsubmit', function () {
-      var email = $(#email).val();
+      var email = $("#email").val();
+      data.formdata = {email};
+      if (!data.formdata.email) {
+        data.context.find('button').prop('disable',false);
+        email.focus();
+        return false;
+      }
       //to empty previous error/sucess message.
       $("#returnmessage").empty();
         //Checking for blank field
