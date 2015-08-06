@@ -1146,7 +1146,6 @@ class UploadHandler
 
     protected function handle_form_data($file, $index) {
         // Handle form data, e.g. $_POST['description'][$index]
-        return $_REQUEST['example2']
     }
 
     protected function get_version_param() {
