@@ -51,7 +51,7 @@ class UploadHandler
             'param_name' => 'files',
             // Set the following option to 'POST', if your server does not support
             // DELETE requests. This is a parameter sent to the client:
-            'delete_type' => 'POST',
+            'delete_type' => 'DELETE',
             'access_control_allow_origin' => '*',
             'access_control_allow_credentials' => false,
             'access_control_allow_methods' => array(
@@ -152,7 +152,7 @@ class UploadHandler
                     'upload_url' => $this->get_full_url().'/thumb/',
                     // Uncomment the following to force the max
                     // dimensions and e.g. create square thumbnails:
-                    'crop' => true,
+                    //'crop' => true,
                     'max_width' => 80,
                     'max_height' => 80
                 )
