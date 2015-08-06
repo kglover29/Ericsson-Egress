@@ -1,6 +1,5 @@
 $('#fileupload').bind('fileuploadsubmit', function () {
     var email = $("#email").val();
-    }
     //to empty previous error/sucess message.
     $("#returnmessage").empty();
       //Checking for blank field

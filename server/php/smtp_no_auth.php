@@ -6,7 +6,7 @@
     ini_set('display_errors', '1');
 
     //$name = $_POST["name"];
-    $email = $_POST["email1"];
+    $email = $_POST['email1'];
     //$subject = $_POST["subject"];
     //$message = $_POST["message"];
 
