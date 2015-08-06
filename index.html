@@ -45,6 +45,7 @@
       <form id="form">
         <p id="returnmessage"></p>
         <label>Email Recipient<input type="text" id="email" placeholder="Email"></label>
+        <label>Message:</label><textarea id="message" placeholder="Message......."></textarea>
       </form>
     </div>
      <br>
@@ -71,7 +72,7 @@
                 [end] -->
                 <button type="button" class="btn btn-danger delete">
                     <i class="glyphicon glyphicon-trash"></i>
-                    <span>Delete</span>
+                    <span>Clear</span>
                 </button>
                 <input type="checkbox" class="toggle">
                 <!-- The global file processing state -->
@@ -97,8 +98,9 @@
         </div>
         <div class="panel-body">
             <ul>
-                <li>The maximum file size for uploads is <strong>10 MB</strong>.</li>
+                <li>Click on “+ Add files…” to select analysis files to email.</li>
                 <li>You can <strong>drag &amp; drop</strong> files from your desktop on this webpage (see <a href="https://github.com/blueimp/jQuery-File-Upload/wiki/Browser-support">Browser support</a>).</li>
+                <li>The maximum file size for uploads is <strong>10 MB</strong>.</li>
                 <li>For security purposes, email recipients are limited to pre-approved domains, <a href="user@ericsson.com">user@ericsson.com</a> for example.</li>
             </ul>
         </div>
@@ -176,7 +178,7 @@
             {% if (file.deleteUrl) { %}
                 <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                     <i class="glyphicon glyphicon-trash"></i>
-                    <span>Delete</span>
+                    <span>Clear</span>
                 </button>
                 <input type="checkbox" name="delete" value="1" class="toggle">
             {% } else { %}
