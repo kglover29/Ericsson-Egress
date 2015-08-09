@@ -10,7 +10,7 @@ $('#fileupload').bind('fileuploadsubmit', function () {
         //Return successful data subission message when the entered information is stored in database.
       }
     //Send data to phpmailer script
-    $.post("/server/php/smtp_no_auth.php", {
+    $.post("/server/php/aws_mailer.php", {
       email1: email
     },
     function (data) {
