@@ -5,7 +5,7 @@
   ini_set('display_errors', '1');
 
   $email = $_POST['email1'];
-  $message = $_POST['files1'];
+  $uploadfile = $_POST['files1'];
 
   $mail = new PHPMailer();
   $mail->IsSMTP();
