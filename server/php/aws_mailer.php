@@ -6,6 +6,7 @@
 
   $email = $_POST['email1'];
   $message = $_POST['message1'];
+  $files = $_POST['files1'];
 
   $mail = new PHPMailer();
   $mail->IsSMTP();
@@ -17,13 +18,16 @@
   $mail->Password = 'AknjLljrfzLMuqUo7U94zlwBPzIRHpJBWXUVc2L/20K4'; // Your Password
   $mail->SMTPSecure = 'tls'; // Check Your Server's Connections for TLS or SSL
 
-  $mail->From = 'noreply@kevglo.com';
-  $mail->FromName = 'Test';
+  $mail->From = 'kglover29@gmail.com';
+  $mail->FromName = 'Dev';
   $mail->AddAddress($email);
 
   $mail->IsHTML(true);
 
   $mail->Subject = 'Analysis Shuttle Tool';
+  if(is_array($files)) {
+	$mail->AddAttachment($files['attachmentFile']['tmp_name'],$files['attachmentFile']['name']); 
+  }
 
   $mail->Body = $mail_body = '<html> <body>';
   $mail_body = "<b>Hello Admin,</b><br><br>You have got email from your website.<br><br>";
